@@ -1,0 +1,20 @@
+.table, .mat-table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 600px;
+}
+
+th.mat-header-cell {
+  font-family: "Arial", Times, serif;
+  font-size: 1rem;
+  color: dodgerblue;
+  font-weight: bold;
+  width: 4rem;
+  text-align: center;
+}
+
+.mat-cell {
+  width: 1rem;
+  text-align: center;
+}

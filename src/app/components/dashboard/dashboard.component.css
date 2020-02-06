@@ -1,0 +1,20 @@
+.example-form {
+  width: 100%;
+}
+
+.warning {
+  color: red;
+}
+
+.mat-radio-button, mat-radio-button-label {
+  padding-right: 2em !important;
+}
+
+mat-form-field {
+  display: inline-block !important;
+}
+
+.full-width {
+  width: 150%;
+}
+

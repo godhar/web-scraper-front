@@ -1,0 +1,40 @@
+<form class="example-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+  <mat-radio-group fxFlex class="full-width"
+                   formControlName="scrapeType">
+    <mat-radio-button value="keywords">Keyword Frequency</mat-radio-button>
+    <mat-radio-button value="full-scrape">Full Scrape</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field fxFlex class="full-width">
+    <input matInput type="text" formControlName="url" placeholder="Web page to scrape">
+  </mat-form-field>
+
+  <ng-container *ngIf="this.form.get('scrapeType').value === 'keywords'">
+    <mat-form-field fxFlex class="full-width">
+      <mat-chip-list #chipList aria-label="Keyword selection">
+        <mat-chip *ngFor="let key of keywords" [selectable]="selectable"
+                  [removable]="removable" (removed)="remove(key)">
+          {{key}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="Add keywords..."
+               [matChipInputFor]="chipList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="addOnBlur"
+               (matChipInputTokenEnd)="add($event)"
+               class="full-width"
+        >
+      </mat-chip-list>
+    </mat-form-field>
+  </ng-container>
+
+  <button fxFlex class="full-width" mat-raised-button color="primary" [disabled]="!form.valid">Submit Url</button>
+
+  </div>
+</form>
+
+<span *ngIf="form.get('keywords').dirty && !form.get('keywords').valid" class="warning">
+    Keywords must be English alphabet.
+  </span>

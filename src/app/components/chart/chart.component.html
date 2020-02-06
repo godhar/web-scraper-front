@@ -1,0 +1,12 @@
+<div class="chart" *ngIf="results">
+  <ngx-charts-pie-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="results"
+    [gradient]="gradient"
+    [legend]="showLegend"
+    [labels]="showLabels"
+    [doughnut]="false"
+  >
+  </ngx-charts-pie-chart>
+</div>

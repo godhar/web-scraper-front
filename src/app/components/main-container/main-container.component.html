@@ -1,0 +1,29 @@
+
+<div fxLayout="column" fxLayoutAlign="space-around center">
+
+  <div fxFlex>
+    <app-loader></app-loader>
+  </div>
+
+  <div fxFlex>
+    <app-chart></app-chart>
+  </div>
+
+  <div class="buffer"></div>
+
+  <div>
+    <app-dynamic-table></app-dynamic-table>
+  </div>
+
+  <div fxFlex class="buffer">
+  </div>
+
+  <button mat-raised-button (click)="navBack()">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+
+  <div fxFlex class="buffer">
+  </div>
+</div>
+
+
